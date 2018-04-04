@@ -34,10 +34,20 @@ namespace OLA5_FilesAndList
                 **/
 
                 // sort the students by GPA
-                students.Sort((x, y) => x.gpa.CompareTo(y.gpa));
+
+                // here's how you'd do it using LINQ
+                // students.Sort((x, y) => x.gpa.CompareTo(y.gpa));
+
+                // here's how to do it without using LINQ, but the class you're comparing
+                // has to inherit from IComparable
+                students.Sort();
+                // then reverse it. lol DESC order.  
+                students.Reverse();
 
                 // print out the top 10 students in the list
                 // for (int i = 0; i < students.Count; i++)
+                Console.WriteLine("Student Name, Class, Earned Hours, GPA, Course, CourseNumber, FinalGrade, TotalCSCICreditHrs, CSCI GPA");
+
                 for (int i = 0; i < 9; i++)
                 {
                     Console.WriteLine(students[i].ToString());

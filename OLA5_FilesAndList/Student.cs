@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OLA5_FilesAndList
 {
-    class Student
+    class Student : IComparable<Student>
     {
         // Student Name,Class,Earned Hours,GPA,Course,CourseNumber,FinalGrade,TotalCSCICreditHrs,CSCI GPA
         // "Gomez, Christine",SR,124,3.0673,CSCI1170,1170,B,36,2.8144
@@ -103,6 +103,14 @@ namespace OLA5_FilesAndList
 
             return studentString;
         }
+
+        public int CompareTo(Student other)
+        {
+            // we're kind of being wicked and only implementingn this for the one property used. 
+            // the GPA
+            return gpa.CompareTo(other.gpa);
+           
+        } 
 
     }
 
